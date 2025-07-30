@@ -2,6 +2,7 @@
 #include "Computer.h"
 #include "Referee.h"
 #include <iostream>
+using namespace std;
 
 int main() {
     Human human;
@@ -11,9 +12,9 @@ int main() {
     Player* winner = referee.refGame(&human, &computer); 
 
     if (winner == nullptr)
-        std::cout << "It's a Tie." << std::endl;
+        // cout << "It's a Tie." << std::endl;
     else
-        std::cout << winner->getName() << " Wins." << std::endl;
+        cout << winner->getName() << endl;
 
     return 0;
 }

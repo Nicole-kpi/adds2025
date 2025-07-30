@@ -12,7 +12,7 @@ Human::Human(): name("Human") {
 char Human::makeMove() {
     char move;
     //cout << "Enter move (R, P, S): ";
-    cout << "Enter move: ";
+    // cout << "Enter move: ";
     cin >> move;
     return move;
 }
