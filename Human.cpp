@@ -4,14 +4,15 @@
 
 using namespace std;
 
-Human::Human() {
-    cout << "Enter your name: ";
-    getline(cin, name);
+Human::Human(): name("Human") {
+    //cout << "Enter your name: ";
+    //getline(cin, name);
 }
 
 char Human::makeMove() {
     char move;
-    cout << "Enter move (R, P, S): ";
+    //cout << "Enter move (R, P, S): ";
+    cout << "Enter move: ";
     cin >> move;
     return move;
 }
