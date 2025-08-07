@@ -4,7 +4,7 @@
 #include <iostream>
 
 int main(){
-    Player* player1 = new Human("Player1");
+    Player* player1 = new Human("Human");
     Player* player2 = new Computer();
 
     Referee ref;
