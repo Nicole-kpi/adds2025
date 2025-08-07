@@ -3,6 +3,8 @@
 
 Human::Human(std::string name): name(name){}
 
+Human::Human() : name("Human") {}
+
 Move* Human::makeMove(){
 std::string moveInput;
 std::cout << "Enter move: ";
@@ -14,7 +16,7 @@ if (!moveInput.empty()) {
             moveInput[i] = std::tolower(moveInput[i]);
         }
     }
-    
+
 return new Move(moveInput);
 }
 
