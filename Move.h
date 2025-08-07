@@ -8,17 +8,11 @@ class Move {
 protected:
     std::string name;
     std::vector<std::string> strongerThan;
+
 public:
-    Move(std::string name = "", std::vector<std::string> strongerThan = {}) : name(name), strongerThan(strongerThan) {};
-    std::string getName() { return this->name;}
-    bool isStrongerThan(Move* other) {
-        for (const auto& strongerMove : strongerThan) {
-            if (strongerMove == other->getName()) {
-                return true;
-            }
-        }
-        return false;
-    }
+    Move(std::string name = "", std::vector<std::string> strongerThan = {});
+    std::string getName() const;
+    bool isStrongerThan(Move* other) const;
 };
 
 #endif

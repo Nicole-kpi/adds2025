@@ -7,7 +7,7 @@ class Player{
     protected:
         std::string name; // Name of the player
     public:
-        std::string getName() {return this-> name;};
+        std::string getName() {return this-> name;}
         virtual Move* makeMove() = 0; // Pure virtual function for making a move
     };
 #endif
