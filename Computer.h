@@ -8,6 +8,5 @@ private:
 public:
     Computer();
     Move* makeMove();
-    std::string getName() override;
 };
 #endif

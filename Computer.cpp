@@ -1,10 +1,9 @@
 #include "Computer.h"
+#include "Factory.h"
 #include <iostream>
     Computer::Computer() : name("Computer"){}
 
     Move* Computer::makeMove(){
-        return new Move("Rock");
-    }
-    std::string Computer::getName(){
-        return name;
+        Factory factory;
+        return factory.createObject("Rock"); // For simplicity, always return Rock
     }

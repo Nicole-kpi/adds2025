@@ -1,16 +1,16 @@
 #include "Human.h"
 #include <iostream>
+#include "Factory.h"
 
-Human::Human(std::string name) : name(name) {}
-Human::Human() : name("Human") {}
-
-Move* Human::makeMove() {
-std::string moveInput;
-std::cout << "Enter move: ";
-std::cin >> moveInput;
-return new Move(moveInput);
+Human::Human(std::string name){
+    this->name = name;
 }
 
-std::string Human::getName(){
-    return name;
+Move *Human::makeMove()
+{
+    std::string moveInput;
+    std::cout << "Enter move: ";
+    std::cin >> moveInput;
+    Factory factory;
+    return Factory::createObject(moveInput);
 }

@@ -4,9 +4,10 @@
 #include <string>
 
 class Player{
+    protected:
+        std::string name; // Name of the player
     public:
-        virtual std::string getName() = 0;
+        std::string getName() {return this-> name;};
         virtual Move* makeMove() = 0; // Pure virtual function for making a move
-        virtual ~Player();
-};
+    };
 #endif
