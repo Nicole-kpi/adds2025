@@ -9,7 +9,7 @@ Human::Human(std::string name){
 Move *Human::makeMove()
 {
     std::string moveInput;
-    std::cout << "Enter move: ";
+    //std::cout << "Enter move: ";
     std::cin >> moveInput;
     Factory factory;
     return Factory::createObject(moveInput);
