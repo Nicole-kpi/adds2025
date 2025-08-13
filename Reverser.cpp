@@ -14,12 +14,12 @@ int Reverser::reverseDigitHelper(int x, int acc){
 }
 
 string Reverser::reverseString(const string& characters){
-    if (characters.empty()) return "EORROR";
-    return reverseStringHelper(characters, characters.size());
+    if (characters.empty()) return "ERROR";
+    return reverseStringHelper(characters, 0);
 }
 
 string Reverser::reverseStringHelper(const string& characters, size_t index){
-    if (index == 0) return std::string();
+    if (index >= characters.size()) return std::string();
     return reverseStringHelper(characters, index + 1) + characters[index];
 }
 
