@@ -3,24 +3,20 @@ using namespace std;
 
 vector<int> Finder::findSubstrings(string s1, string s2) {
     vector<int> result;
-    if (s2.empty()) {
-        result.push_back(-1);
-        return result;
-    }
-    size_t found = s1.find(s2);
+    if (s2.empty()) return result;
 
-    for (size_t i = 1; i <= s2.size(); i++) {
+    string prefix;
+    prefix.reserve(s2.size()); 
+
+    for (size_t i = 0; i < s2.size(); i++) {
+        prefix.push_back(s2[i]);   
+        size_t found = s1.find(prefix);
         if (found != string::npos) {
             result.push_back(static_cast<int>(found));
         } else {
             result.push_back(-1);
-            for (size_t j = i + 1; j <= s2.size(); j++) {
-                result.push_back(-1);
-            }
-            break;
         }
     }
-
     return result;
 }
 
