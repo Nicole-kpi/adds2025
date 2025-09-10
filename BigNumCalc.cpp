@@ -7,7 +7,7 @@ std::list<int> bigNumCalc::buildBigNum(const std::string& s) const {
     if (s.empty()) { out.push_back(0); return out; }
     bool allZeros = true;
     for (char c : s) {
-        if (c < '0' || c > '9') continue;   // skip non-digit characters
+        if (c < '0' || c > '9') continue;   
         int d = c - '0';
         if (d != 0) allZeros = false;
         out.push_back(d);
@@ -77,7 +77,6 @@ std::list<int> bigNumCalc::mul(const std::list<int>& A, const std::list<int>& B)
     for (int d : B) b.push_back(d);
 
     std::vector<int> prod(a.size() + b.size(), 0);
- 
     for (int i = (int)a.size() - 1; i >= 0; --i) {
         for (int j = (int)b.size() - 1; j >= 0; --j) {
             int p = (a[i] * b[j]) + prod[i + j + 1];
@@ -85,7 +84,6 @@ std::list<int> bigNumCalc::mul(const std::list<int>& A, const std::list<int>& B)
             prod[i + j] += p / 10;
         }
     }
-
     std::list<int> res;
     bool leading = true;
     for (int d : prod) {
