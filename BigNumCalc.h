@@ -4,10 +4,10 @@
 #include <list>
 #include <string>
 
-class bigNumCalc {
+class BigNumCalc {
 public:
-    bigNumCalc() = default;
-    ~bigNumCalc() = default;
+    BigNumCalc() = default;
+    ~BigNumCalc() = default;
 
     // "12345" -> {1,2,3,4,5}
     std::list<int> buildBigNum(const std::string& numString) const;

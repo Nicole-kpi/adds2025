@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <vector>
 
-std::list<int> bigNumCalc::buildBigNum(const std::string& s) const {
+std::list<int> BigNumCalc::buildBigNum(const std::string& s) const {
     std::list<int> out;
     if (s.empty()) { out.push_back(0); return out; }
     bool allZeros = true;
@@ -17,12 +17,12 @@ std::list<int> bigNumCalc::buildBigNum(const std::string& s) const {
     return out;
 }
 
-void bigNumCalc::stripLeadingZeros(std::list<int>& num) {
+void BigNumCalc::stripLeadingZeros(std::list<int>& num) {
     while (num.size() > 1 && !num.empty() && num.front() == 0) num.pop_front();
     if (num.empty()) num.push_back(0);
 }
 
-int bigNumCalc::compare(const std::list<int>& a, const std::list<int>& b) {
+int BigNumCalc::compare(const std::list<int>& a, const std::list<int>& b) {
     if (a.size() != b.size()) return a.size() > b.size() ? 1 : -1;
     auto ia = a.begin(), ib = b.begin();
     for (; ia != a.end(); ++ia, ++ib) {
@@ -31,7 +31,7 @@ int bigNumCalc::compare(const std::list<int>& a, const std::list<int>& b) {
     return 0;
 }
 
-std::list<int> bigNumCalc::add(const std::list<int>& A, const std::list<int>& B) const {
+std::list<int> BigNumCalc::add(const std::list<int>& A, const std::list<int>& B) const {
     std::list<int> res;
     auto ia = A.rbegin();
     auto ib = B.rbegin();
@@ -47,7 +47,7 @@ std::list<int> bigNumCalc::add(const std::list<int>& A, const std::list<int>& B)
     return res;
 }
 
-std::list<int> bigNumCalc::sub(const std::list<int>& A, const std::list<int>& B) const {
+std::list<int> BigNumCalc::sub(const std::list<int>& A, const std::list<int>& B) const {
     const std::list<int>* big  = &A;
     const std::list<int>* small= &B;
     if (compare(A, B) < 0) { big = &B; small = &A; }
@@ -67,7 +67,7 @@ std::list<int> bigNumCalc::sub(const std::list<int>& A, const std::list<int>& B)
     return res;
 }
 
-std::list<int> bigNumCalc::mul(const std::list<int>& A, const std::list<int>& B) const {
+std::list<int> BigNumCalc::mul(const std::list<int>& A, const std::list<int>& B) const {
     if ((A.size() == 1 && A.front() == 0) || (B.size() == 1 && B.front() == 0))
         return std::list<int>{0};
 
@@ -95,7 +95,7 @@ std::list<int> bigNumCalc::mul(const std::list<int>& A, const std::list<int>& B)
     return res;
 }
 
-std::string bigNumCalc::toString(const std::list<int>& num) {
+std::string BigNumCalc::toString(const std::list<int>& num) {
     std::string s;
     s.reserve(num.size());
     for (int d : num) s.push_back(char('0' + d));
