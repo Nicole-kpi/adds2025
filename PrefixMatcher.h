@@ -1,5 +1,5 @@
-#ifndef PREFIXMATCHES_H
-#define PREFIXMATCHES_H
+#ifndef PREFIXMATCHER_H
+#define PREFIXMATCHER_H
 #include <string>
 
 class PrefixMatches{
