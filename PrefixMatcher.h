@@ -2,7 +2,7 @@
 #define PREFIXMATCHER_H
 #include <string>
 
-class PrefixMatches{
+class PrefixMatcher{
 private:
     struct Node{
         Node* child[2];
@@ -18,8 +18,8 @@ private:
     static int bitIndex(char c);
 
 public:
-    PrefixMatches();
-    ~PrefixMatches();
+    PrefixMatcher();
+    ~PrefixMatcher();
     void insert(const std::string& address, int routerNuber);
     int selectRouter(const std::string& networkAddress) const;
 };

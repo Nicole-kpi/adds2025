@@ -2,17 +2,17 @@
 
 using std::string;
 
-PrefixMatches::PrefixMatches() : root(new Node) {}
+PrefixMatcher::PrefixMatcher() : root(new Node) {}
 
-PrefixMatches::~PrefixMatches() { delete root; }
+PrefixMatcher::~PrefixMatcher() { delete root; }
 
-int PrefixMatches::bitIndex(char c) {
+int PrefixMatcher::bitIndex(char c) {
     if (c == '0') return 0;
     if (c == '1') return 1;
     return -1;
 }
 
-void PrefixMatches::insert(const string& address, int routerNumber) {
+void PrefixMatcher::insert(const string& address, int routerNumber) {
     Node* cur = root;
     for (char c : address) {
         int b = bitIndex(c);
@@ -23,7 +23,7 @@ void PrefixMatches::insert(const string& address, int routerNumber) {
     cur->router = routerNumber;
 }
 
-int PrefixMatches::selectRouter(const string& networkAddress) const {
+int PrefixMatcher::selectRouter(const string& networkAddress) const {
     const Node* cur = root;
     int lastMatch = cur->router;   
 
