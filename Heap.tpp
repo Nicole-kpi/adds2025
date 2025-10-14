@@ -157,7 +157,7 @@ class Heap {
         void insert(T element) {
             this->tree.push_back(element);
             heapIndex index = this->tree.size() - 1;
-            while (idx > 1){
+            while (index > 1){
                 heapIndex parentIndex = this->getParentPosition(index);
                 if (this->tree.at(parentIndex) > this->tree.at(index)){
                     std::swap(this->tree.at(parentIndex), this->tree.at(index));
@@ -185,21 +185,21 @@ class Heap {
             if (index == this->tree.size()) return;
 
             heapIndex last = this->tree.size() - 1;
-            if (idx == last){
+            if (index == last){
                 this->tree.pop_back();
                 return;
             }
             this->tree.at(index) = this->tree.at(last);
             this->tree.pop_back();
 
-            if (idx > 1){
-                heapIndex parent = this->getParentPosition(idx);
-                if (this->tree.at(idx) < this->tree.at(parent)){
-                    while (idx > 1){
-                        parent = this->getParentPosition(idx);
-                        if (this->tree.at(parent) > this->tree.at(idx)){
-                            std::swap(this->tree.at(parent), this->tree.at(idx));
-                            idx = parent;
+            if (index > 1){
+                heapIndex parent = this->getParentPosition(index);
+                if (this->tree.at(index) < this->tree.at(parent)){
+                    while (index > 1){
+                        parent = this->getParentPosition(index);
+                        if (this->tree.at(parent) > this->tree.at(index)){
+                            std::swap(this->tree.at(parent), this->tree.at(index));
+                            index = parent;
                         } else {
                             break;
                         }
@@ -207,7 +207,7 @@ class Heap {
                     return;
                 }
             }
-            this->heapifyDown(idx);
+            this->heapifyDown(index);
         }
         
         // TO BE IMPLEMENTED
